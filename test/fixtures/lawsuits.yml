@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lawsuit_date: 2022-04-04
+  lawsuit_number: 1
+  lawsuit_complainant: MyString
+  lawsuit_defendant: MyString
+  lawsuit_case_description: MyText
+
+two:
+  lawsuit_date: 2022-04-04
+  lawsuit_number: 1
+  lawsuit_complainant: MyString
+  lawsuit_defendant: MyString
+  lawsuit_case_description: MyText
