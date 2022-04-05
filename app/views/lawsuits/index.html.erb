@@ -1,18 +1,17 @@
 <h1>Lawsuits</h1>
+
+<%= link_to 'New Lawsuit', new_lawsuit_path %>
+
 <ul>
   <% @lawsuits.each do |lawsuit| %>
-   <li>
      <hr>
-     <h3>Data do processo</h3>
-     <%= lawsuit.lawsuit_date %><br>
-     <h3>Número do processo</h3>
-     <%= lawsuit.lawsuit_number %><br>
-     <h3>Reclamante</h3>
-     <%= lawsuit.lawsuit_complainant %><br>
-     <h3>Reclamada</h3>
-     <%= lawsuit.lawsuit_defendant %><br>
-     <h3>Descrição da ação</h3>
-     <%= lawsuit.lawsuit_case_description %><br>
-   </li>
+     <a href="<%= lawsuit_path (lawsuit) %>">
+     <p> Lawsuit Number:
+     <%= lawsuit.lawsuit_number %> 
+     Complainant:
+     <%= lawsuit.lawsuit_complainant %>
+     Defendant 
+     <%= lawsuit.lawsuit_defendant %> </p>
+     </a>  
   <% end %>
 </ul>

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # get "/lawsuit", to: "lawsuit#index"
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :lawsuit
+  resources :lawsuits
 end
