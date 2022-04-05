@@ -2,7 +2,17 @@
 <ul>
   <% @lawsuits.each do |lawsuit| %>
    <li>
-     <%= lawsuit.date %>
+     <hr>
+     <h3>Data do processo</h3>
+     <%= lawsuit.lawsuit_date %><br>
+     <h3>Número do processo</h3>
+     <%= lawsuit.lawsuit_number %><br>
+     <h3>Reclamante</h3>
+     <%= lawsuit.lawsuit_complainant %><br>
+     <h3>Reclamada</h3>
+     <%= lawsuit.lawsuit_defendant %><br>
+     <h3>Descrição da ação</h3>
+     <%= lawsuit.lawsuit_case_description %><br>
    </li>
   <% end %>
 </ul>
