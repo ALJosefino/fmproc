@@ -1,0 +1,46 @@
+<%= form_with model: @lawsuit, do |form| %>
+
+   <div> 
+      <%= form.label :lawsuit_complainant %>
+      <%= form.text_field :lawsuit_complainant %>
+      <%= @lawsuit.errors.full_messages_for(:lawsuit_complainant).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+   </div>
+
+   <div>
+     <%= form.label :lawsuit_defendant %>
+     <%= form.text_field :lawsuit_defendant %>
+     <%= @lawsuit.errors.full_messages_for(:lawsuit_defendant).each do |message|%>
+     <div><%= message %></div>
+     <% end %>
+   </div>
+
+   <div> 
+     <%= form.label :lawsuit_date %>
+     <%= form.date_field :lawsuit_date %>
+     <% @lawsuit.errors.full_messages_for(:lawsuit_date).each do |message|%>
+     <div><%= message %></div>
+     <% end %>
+   </div>
+
+   <div>
+      <%= form.label :lawsuit_number %>
+      <%= form.number_field :lawsuit_number %>
+      <% @lawsuit.errors.full_messages_for(:lawsuit_number).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+   </div>
+
+   <div>
+     <%= form.label :lawsuit_case_description %>
+     <%= form.text_area :lawsuit_case_description %>
+     <% @lawsuit.errors.full_messages_for(:lawsuit_case_description).each do |message|%>
+     <div><%= message %></div>
+     <% end %>
+   </div>
+
+   <%= form.submit "Save" %>
+   <br>
+   <%= link_to 'Back to Lawsuits', root_path %>
+   <% end %>

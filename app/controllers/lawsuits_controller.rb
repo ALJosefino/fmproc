@@ -20,6 +20,11 @@ class LawsuitsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @lawsuit = Lawsuit.find(params[:id])
+  end
+  
   private
 
   def lawsuit_params
