@@ -25,6 +25,17 @@ class LawsuitsController < ApplicationController
     @lawsuit = Lawsuit.find(params[:id])
   end
   
+  def update
+    @lawsuit = Lawsuit.find(params[:id])
+    
+    if @lawsuit.update(lawsuit_params)
+      redirect_to @lawsuit
+    else
+      render :edit
+    end
+  
+  end
+
   private
 
   def lawsuit_params

@@ -10,4 +10,8 @@
 <p> <%= @lawsuit.lawsuit_number %></p>
 <h3> Lawsuit Case Description </h3>
 <p> <%= @lawsuit.lawsuit_case_description %> </p>
-<%= link_to 'Back to Lawsuits', root_path %>
+
+<ul>
+<li><%= link_to 'Back to all Lawsuits', root_path %></li>
+<li><%= link_to 'Edit this Lawsuit', edit_lawsuit_path(@lawsuit) %></li>
+</ul>
