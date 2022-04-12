@@ -9,9 +9,10 @@
 <h3> Lawsuit Number </h3>
 <p> <%= @lawsuit.lawsuit_number %></p>
 <h3> Lawsuit Case Description </h3>
-<p> <%= @lawsuit.lawsuit_case_description %> </p>
+<p> <%= @lawsuit.lawsuit_case_description %></p>
 
 <ul>
 <li><%= link_to 'Back to all Lawsuits', root_path %></li>
 <li><%= link_to 'Edit this Lawsuit', edit_lawsuit_path(@lawsuit) %></li>
+<li><%= link_to 'Delete this Lawsuit', lawsuit_path(@lawsuit), data: { turbo_method: :delete, turbo_confirm:'Are you sure what you want delete this lawasuit?' } %></li>
 </ul>
