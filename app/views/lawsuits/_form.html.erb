@@ -1,14 +1,13 @@
 <%= form_with model: lawsuit do |form| %>
 
-   <div class="mb-3">
+   <div class="form-control form-control-lg" type="text" aria-label=".form-control-lg example">
       <%= form.label :lawsuit_complainant %>
+      </label>
       <%= form.text_field :lawsuit_complainant %>
       <% lawsuit.errors.full_messages_for(:lawsuit_complainant).each do |message| %>
-      <div><%= message %></div>
+      <><%= message %></div>
       <% end %>
-   </div>
 
-   <div>
      <%= form.label :lawsuit_defendant %>
      <%= form.text_field :lawsuit_defendant %>
      <% lawsuit.errors.full_messages_for(:lawsuit_defendant).each do |message| %>
@@ -16,15 +15,14 @@
      <% end %>
    </div>
 
-   <div> 
+  <div class="form-control form-control-lg" type="text" aria-label=".form-control-lg example">
+
      <%= form.label :lawsuit_date %>
      <%= form.date_field :lawsuit_date %>
      <% lawsuit.errors.full_messages_for(:lawsuit_date).each do |message| %>
      <div><%= message %></div>
      <% end %>
-   </div>
 
-   <div>
       <%= form.label :lawsuit_number %>
       <%= form.number_field :lawsuit_number %>
       <% lawsuit.errors.full_messages_for(:lawsuit_number).each do |message| %>
@@ -32,17 +30,24 @@
       <% end %>
    </div>
 
-   <div class="mb-3">
-     <%= form.label :lawsuit_case_description %>
-     <%= form.text_area :lawsuit_case_description %>
-     <% lawsuit.errors.full_messages_for(:lawsuit_case_description).each do |message| %>
+ <div class="mb-3">
+    <p for="exampleFormControlTextarea1" class="form-label">
+      <%= form.label :lawsuit_case_description %>
+     </p>
+
+     <div class="form-control" id="exampleFormControlTextarea1" rows="9">
+      <%= form.text_area :lawsuit_case_description %>
+     </div>
+      <% lawsuit.errors.full_messages_for(:lawsuit_case_description).each do |message| %>
      <div><%= message %></div>
      <% end %>
-   </div>
+ </div>
 
-   <%= form.submit "Save" %>
+
+    <%= form.submit "Save" %>
+
+   <button type="button" class="btn btn-outline-warning">
+   <%= link_to 'Back to all Lawsuits', root_path %>
+   </button>
    
-   <ul>
-   <li><%= link_to 'Back to all Lawsuits', root_path %></li>
-   </ul>
    <% end %>

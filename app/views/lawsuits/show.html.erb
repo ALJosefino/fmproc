@@ -1,18 +1,36 @@
-<h1><%= @lawsuit.lawsuit_number %></h1>
+ <ul>
+  <h1>Lawsuit details</h1>
 
-  <h3> Lawsuit Complainant </h3> 
-  <p> <%= @lawsuit.lawsuit_complainant %></p>
-  <h3> Lawsuit Defendant </h3> 
-  <p> <%= @lawsuit.lawsuit_defendant %></p>
-  <h3> Lawsuit Date </h3>
-  <p> <%= @lawsuit.lawsuit_date %></p>
-  <h3> Lawsuit Number </h3>
-  <p> <%= @lawsuit.lawsuit_number %></p>
-  <h3> Lawsuit Case Description </h3>
-  <p> <%= @lawsuit.lawsuit_case_description %></p>
+
+   <ul class="list-group">
+
+    <li class="list-group-item active" aria-current="true">Lawsuit Complainant</li>
+    <li class="list-group-item"><%= @lawsuit.lawsuit_complainant %></li>
   
-<ul>
-<li><%= link_to 'Back to all Lawsuits', root_path %></li>
-<li><%= link_to 'Edit this Lawsuit', edit_lawsuit_path(@lawsuit) %></li>
-<li><%= link_to 'Delete this Lawsuit', lawsuit_path(@lawsuit), data: { turbo_method: :delete, turbo_confirm:'Are you sure what you want delete this lawasuit?' } %></li>
+    <li class="list-group-item active" aria-current="true">Lawsuit Defendant</li> 
+    <li class="list-group-item"><%= @lawsuit.lawsuit_defendant %></li>
+
+    <li class="list-group-item active" aria-current="true">Lawsuit Date</li>
+    <li class="list-group-item"><%= @lawsuit.lawsuit_date %></li>
+
+    <li class="list-group-item active" aria-current="true"> Lawsuit Number</li>
+    <li class="list-group-item"><%= @lawsuit.lawsuit_number %></li>
+
+    <li class="list-group-item active" aria-current="true">Lawsuit Case Description</li>
+    <li class="list-group-item"><%= @lawsuit.lawsuit_case_description %></li>
+  </ul>
+
+
+ <button type="button" class="btn btn-outline-warning">
+ <%= link_to 'Back to all Lawsuits', root_path %>
+ </button>
+ 
+ <button type="button" class="btn btn-outline-success">
+ <%= link_to 'Edit this Lawsuit', edit_lawsuit_path(@lawsuit) %>
+ </button>
+
+ <button type="button" class="btn btn-outline-danger">
+ <%= link_to 'Delete this Lawsuit', lawsuit_path(@lawsuit), data: { turbo_method: :delete, turbo_confirm:'Are you sure what you want delete this lawasuit?' } %>
+ </button>
+
 </ul>
