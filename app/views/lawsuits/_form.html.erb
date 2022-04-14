@@ -1,6 +1,6 @@
 <%= form_with model: lawsuit do |form| %>
 
-   <div>
+   <div class="mb-3">
       <%= form.label :lawsuit_complainant %>
       <%= form.text_field :lawsuit_complainant %>
       <% lawsuit.errors.full_messages_for(:lawsuit_complainant).each do |message| %>
@@ -32,7 +32,7 @@
       <% end %>
    </div>
 
-   <div>
+   <div class="mb-3">
      <%= form.label :lawsuit_case_description %>
      <%= form.text_area :lawsuit_case_description %>
      <% lawsuit.errors.full_messages_for(:lawsuit_case_description).each do |message| %>

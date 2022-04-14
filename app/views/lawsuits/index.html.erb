@@ -1,18 +1,28 @@
 <h1>Lawsuits</h1>
-
-<%= link_to 'New Lawsuit', new_lawsuit_path %>
-
 <ul>
-  <% @lawsuits.each do |lawsuit| %>
-     <hr>
-     <a href="<%= lawsuit_path (lawsuit) %>">
-     <p> Lawsuit Number:
-     <%= lawsuit.lawsuit_number %> </p>
-     <p> Complainant:
-     <%= lawsuit.lawsuit_complainant %> </p>
-     <p> Defendant
-     <%= lawsuit.lawsuit_defendant %> </p>
-     </a>  
+<button type="button" class="btn btn-outline-info">
+  <%= link_to 'New Lawsuit', new_lawsuit_path %>
+</button>
+
+  
+    <% @lawsuits.each do |lawsuit| %>
+      <a href=<%= lawsuit_path (lawsuit) %>>
+        
+        <div class="list-group">
+
+        <ul class="list-group-item list-group-item-action list-group-item-primary"> 
+          <li>Lawsuit Number:</li>
+          <%= lawsuit.lawsuit_number %>
+        
+          <li>Complainant:</li>
+          <%= lawsuit.lawsuit_complainant %>
+        
+          <li>Defendant</li>
+          <%= lawsuit.lawsuit_defendant %>
+        </ul>
+          </div>
+      </a>  
+
   <% end %>
 </ul>
 
